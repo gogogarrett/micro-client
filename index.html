@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/app.css">
+  <script src="js/angular.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body>
+
+<div class="row">
+  <div class="col-md-6">
+    <div ng-controller="UserListCtrl">
+      <h2>Users</h2>
+      Search: <input ng-model="query">
+      Sort by:
+      <select ng-model="orderProp">
+        <option value="name">Alphabetical</option>
+        <option value="age">Newest</option>
+      </select>
+
+
+      <ul class="users">
+        <li ng-repeat="user in users | filter:query | orderBy:orderProp">
+          <p>Name: {{user.name}}</p>
+          <p>Age: {{user.age}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div ng-controller="SubscriptionListCtrl">
+      <h2>Subscriptions</h2>
+      Search: <input ng-model="query">
+      Sort by:
+      <select ng-model="orderProp">
+        <option value="name">Alphabetical</option>
+        <option value="age">Newest</option>
+      </select>
+
+
+      <ul class="subscriptions">
+        <li ng-repeat="subscription in subscriptions | filter:query | orderBy:orderProp">
+          <p>Name: {{subscription.name}}</p>
+          <p>Active: {{subscription.active}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+
+</body>
+</html>
