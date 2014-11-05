@@ -6,7 +6,7 @@ phonecatApp.controller('UserListCtrl', ['$scope', '$http',
       $scope.users = data;
     });
 
-    $scope.orderProp = 'age';
+    $scope.orderProp = 'name';
   }]);
 
 phonecatApp.controller('SubscriptionListCtrl', ['$scope', '$http',
